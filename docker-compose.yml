@@ -1,6 +1,8 @@
 services:
   yolo:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -11,7 +13,3 @@ services:
       MAX_QUEUE: ${MAX_QUEUE:-60}
       RESULT_TTL_SECONDS: ${RESULT_TTL_SECONDS:-3600}
       COLAB_URL: ${COLAB_URL:-}
-    volumes:
-      - yolo-data:/data
-volumes:
-  yolo-data:
