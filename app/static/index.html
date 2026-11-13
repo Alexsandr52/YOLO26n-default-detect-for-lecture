@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <title>YOLO26 — детекция объектов</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <header><span class="eyebrow">ДЕМО ДЛЯ ЛЕКЦИИ</span><span class="model">YOLO26n</span></header>
+    <section class="intro">
+      <h1>YOLO26n inference API</h1>
+      <p>Загрузите изображение или видео.</p>
+    </section>
+    <section class="panel" aria-label="Обработка файла">
+      <div class="upload-area">
+        <div><h2>Ваш файл</h2><p>Изображение до 20 МБ или видео до 100 МБ</p></div>
+        <input id="file" type="file" accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.webm,.avi,.mkv" hidden>
+        <button id="choose" class="secondary" type="button">Загрузить</button>
+      </div>
+      <div class="selection"><span id="filename">Файл не выбран</span><span id="filesize"></span></div>
+      <button id="submit" class="primary" type="button" disabled>Обработать</button>
+      <p class="hint">Видео обрабатывается покадрово, это может занять время. Результат видео будет без звука.</p>
+    </section>
+    <section id="result-section" class="result" hidden aria-live="polite">
+      <div class="result-heading"><h2>Результат</h2><span id="status" class="status"></span></div>
+      <p id="message" class="message"></p>
+      <div id="media" class="media" hidden></div>
+      <div id="result-actions" class="result-actions" hidden><p id="timing"></p><a id="download" class="download" download>Скачать результат</a></div>
+    </section>
+    <footer><div><strong>Код работы этого сервиса</strong><p>Открыть можно через google colab, что бы провести детекцию самостоятельно.</p></div><a id="notebook" href="/notebook">Скачать ноутбук</a></footer>
+  </main>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
